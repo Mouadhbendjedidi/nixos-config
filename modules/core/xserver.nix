@@ -3,7 +3,7 @@
   services = {
     xserver = {
       enable = true;
-      xkb.layout = "us,ar";
+      xkb.layout = "us";
     };
 
     displayManager.autoLogin = {

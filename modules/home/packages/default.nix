@@ -2,7 +2,7 @@
 {
   imports = [
     ./cli.nix
-    ./custom.nix
+    # ./custom.nix
     ./dev.nix
     ./gui.nix
   ];
