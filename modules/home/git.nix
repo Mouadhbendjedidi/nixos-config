@@ -7,6 +7,7 @@
     userEmail = "alfadjr2007@gmail.com";
 
     extraConfig = {
+      core.editor = "nvim";
       init.defaultBranch = "main";
       color.ui = true;
     };
