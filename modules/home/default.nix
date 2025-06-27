@@ -3,7 +3,7 @@
   imports = [
    #./aseprite/aseprite.nix           # pixel art editor
     ./audacious.nix                   # music player
-   #./bat.nix                         # better cat command
+    ./bat.nix                         # better cat command
     ./browser.nix                     # firefox based browser
     ./btop.nix                        # resouces monitor 
     ./cava.nix                        # audio visualizer
@@ -28,7 +28,7 @@
     ./packages                        # other packages
    # ./retroarch.nix  
     ./rofi.nix                        # launcher
-    ./scripts/scripts.nix             # personal scripts
+    # ./scripts/scripts.nix             # personal scripts
    # ./ssh.nix                         # ssh config
     ./superfile/superfile.nix         # terminal file manager
     ./swaylock.nix                    # lock screen

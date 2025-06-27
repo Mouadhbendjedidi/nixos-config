@@ -3,13 +3,8 @@
   home.packages = with pkgs; [
     ## Better core utils
     duf                               # disk information
-    eza                               # ls replacement
-    fd                                # find replacement
-    gping                             # ping with a graph
-    gtrash                            # rm replacement, put deleted files in system trash
     hevi                              # hex viewer
     hexyl                             # hex viewer
-    man-pages                         # extra man pages
     ncdu                              # disk space
     ripgrep                           # grep replacement
     tldr
@@ -36,9 +31,6 @@
     gtt                               # google translate TUI
     programmer-calculator
     smassh                            # typing test in the terminal
-    toipe                             # typing test in the terminal
-    tomato-c                          # TUI pomodoro timer
-    ttyper                            # cli typing test
 
     ## Monitoring / fetch
     htop

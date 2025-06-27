@@ -4,6 +4,6 @@ let
 in
 {
   home.packages = [
-    _2048
+    
   ];
 }
