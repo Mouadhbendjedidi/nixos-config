@@ -5,7 +5,7 @@
     ./hardware.nix
     ./xserver.nix
     ./network.nix
-   #./nh.nix
+    ./nh.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
@@ -15,6 +15,5 @@
     ./flatpak.nix
     ./user.nix
     ./wayland.nix
-   #./virtualization.nix
   ];
 }
