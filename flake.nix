@@ -40,6 +40,10 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     ghostty.url = "github:ghostty-org/ghostty";
+    
+    catppuccin.url = "github:catppuccin/nix";
+
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs =
@@ -55,7 +59,7 @@
     in
     {
       nixosConfigurations = {
-        vm = nixpkgs.lib.nixosSystem {
+        remuru = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/remuru ];
           specialArgs = {
