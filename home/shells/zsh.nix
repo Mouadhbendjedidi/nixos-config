@@ -1,25 +1,5 @@
-{ pkgs, ... }:
-
+{ ... }:
 {
-  imports = [ ./starship.nix ];
-  home.packages = with pkgs; [
-    nnn
-    zip
-    unzip
-    eza
-    bat
-    ripgrep
-    git
-  ];
-  home.shellAliases = {
-    cd = "z";
-    cat = "bat";
-    c = "clear";
-    l = "eza -lh --icons=auto";
-    ll = "eza -lha --icons=auto --sort=name --group-directories-first";
-    ls = "eza -1 --icons=auto";
-    ld = "eza -lhD --icons=auto";
-  };
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -59,13 +39,5 @@
       setopt hist_ignore_dups
       setopt hist_find_no_dups
     '';
-  };
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
   };
 }
