@@ -14,6 +14,7 @@
 
       os = {
 	style = "blue";
+	format = "$name";
 
         symbols = {
 	  NixOS = " ";
