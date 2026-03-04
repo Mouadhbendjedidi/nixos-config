@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, sis, inputs, host, ... }:
 
 {
   imports =
@@ -18,7 +18,7 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-  networking.hostName = "shion"; # Define your hostname.
+  networking.hostName = host; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -67,15 +67,15 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.aridj = {
-    description = "aridj";
+  users.users.${username} = {
+    description = username;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.bash;
-    home = "/home/aridj";
+    home = "/home/${username}";
   };
 
-  security.pki.certificateFiles = [ ./ca.pem ];
+  security.pki.certificateFiles = [ ../../certs/ca.pem ];
 
   programs.ssh.startAgent = true;
 
