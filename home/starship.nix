@@ -24,6 +24,14 @@
 	};
       };
 
+      username = {
+        disabled = false;
+	show_always = true;
+	style_user = 'green bold';
+	style_root = 'red bold';
+	format = " [ $user]";
+      };
+
       character = {
         disabled = false;
         success_symbol = "[❯](green)";
