@@ -9,7 +9,7 @@
       add_newline = true;
 
       format = ''
-        $os$directory$git_branch$git_status$nix_shell
+        $os$username$directory$git_branch$git_status$nix_shell
         $character'';
 
       os = {
@@ -27,9 +27,9 @@
       username = {
         disabled = false;
 	show_always = true;
-	style_user = 'green bold';
-	style_root = 'red bold';
-	format = " [ $user]";
+	style_user = "green bold";
+	style_root = "red bold";
+	format = " [ $user]($style) ";
       };
 
       character = {
