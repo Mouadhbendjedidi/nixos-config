@@ -38,7 +38,7 @@
         home.username = me;
         home.homeDirectory = "/home/${me}";
 
-        imports = [ ../../home/home.nix ];
+        imports = [ ../../home ];
 
         home.stateVersion = "25.05";
         programs.home-manager.enable = true;
