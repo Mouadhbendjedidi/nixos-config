@@ -67,12 +67,12 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    description = username;
+  users.users.${sis} = {
+    description = sis;
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.bash;
-    home = "/home/${username}";
+    home = "/home/${sis}";
   };
 
   security.pki.certificateFiles = [ ../../certs/ca.pem ];

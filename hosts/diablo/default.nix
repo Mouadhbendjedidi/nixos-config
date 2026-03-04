@@ -29,14 +29,14 @@
   
   home-manager = {
     
-    extraSpecialArgs = { inherit inputs username host; };
+    extraSpecialArgs = { inherit inputs me host; };
     useUserPackages = true;
     useGlobalPkgs = true;
     
-    users.${username} = { 
+    users.${me} = { 
 
-        home.username = username;
-        home.homeDirectory = "/home/${username}";
+        home.username = me;
+        home.homeDirectory = "/home/${me}";
 
         imports = [ ../../home/home.nix ];
 
@@ -47,15 +47,15 @@
   };    
   
   # username & hostname 
-  wsl.defaultUser = username;
+  wsl.defaultUser = me;
   networking.hostName = host;
   
-  users.users.${username} = {
+  users.users.${me} = {
     isNormalUser = true;
-    description = username;
+    description = me;
     extraGroups = [ "wheel" ]; # Sudo access
     shell = pkgs.zsh;
-    home = "/home/${username}";
+    home = "/home/${me}";
   };
 
   # zsh btw!
