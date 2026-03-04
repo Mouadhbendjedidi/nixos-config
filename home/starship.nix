@@ -13,8 +13,8 @@
         $character'';
 
       os = {
+        disabled = false;
 	style = "blue";
-	format = "$name";
 
         symbols = {
 	  NixOS = " ";
