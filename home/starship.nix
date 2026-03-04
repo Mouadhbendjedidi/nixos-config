@@ -9,8 +9,19 @@
       add_newline = true;
 
       format = ''
-        $directory$git_branch$git_status$nix_shell
+        $os$directory$git_branch$git_status$nix_shell
         $character'';
+
+      os = {
+	style = "blue";
+
+        symbols = {
+	  NixOS = " ";
+	  Debian = "";
+	  Android = "";
+	  Arch = "󰣇 ";
+	};
+      };
 
       character = {
         disabled = false;
@@ -46,7 +57,7 @@
         stashed = "[ ($count) ](blue)";
       };
 
-      nix_shell = { disabled = false; format = "[ ](blue)"; };
+      nix_shell = { disabled = false; format = "[on  Nix Shell](blue)"; };
 
       line_break = { disabled = false; };
     };
