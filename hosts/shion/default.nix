@@ -7,6 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../../modules/core
+      ../../home/aridj
       ./hardware-configuration.nix
     ];
 
@@ -17,11 +19,6 @@
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
-
-  networking.hostName = host; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Africa/Algiers";
@@ -65,15 +62,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${sis} = {
-    description = sis;
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.bash;
-    home = "/home/${sis}";
-  };
 
   security.pki.certificateFiles = [ ../../certs/ca.pem ];
 

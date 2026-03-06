@@ -5,12 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, me, inputs, host, ... }:
+{ config, lib, pkgs, me, inputs, ... }:
 
 {
   imports = [
-    
-    inputs.home-manager.nixosModules.home-manager
+    ../../modules/core
+    ../../home/mouadh
     inputs.nixos-wsl.nixosModules.default
   ];
 
@@ -26,41 +26,6 @@
     cmatrix
     neovim
   ];
-  
-  home-manager = {
-    
-    extraSpecialArgs = { inherit inputs me host; };
-    useUserPackages = true;
-    useGlobalPkgs = true;
-    
-    users.${me} = { 
-
-        home.username = me;
-        home.homeDirectory = "/home/${me}";
-
-        imports = [ ../../home ];
-
-        home.stateVersion = "25.05";
-        programs.home-manager.enable = true;
-
-    };
-  };    
-  
-  # username & hostname 
-  wsl.defaultUser = me;
-  networking.hostName = host;
-  
-  users.users.${me} = {
-    isNormalUser = true;
-    description = me;
-    extraGroups = [ "wheel" ]; # Sudo access
-    shell = pkgs.zsh;
-    home = "/home/${me}";
-  };
-
-  # zsh btw!
-  programs.zsh.enable = true;
-  programs.bash.enable = true;
   
   # add experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
