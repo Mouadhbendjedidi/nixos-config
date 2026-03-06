@@ -2,12 +2,8 @@
 {
 
   imports = [ 
-    ./shells
-    ./fzf.nix
-    ./zoxide.nix
-    ./packages.nix
-    ./starship.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.nixos-wsl.nixosModules.default
   ];
 
   # username & hostname 
@@ -37,7 +33,7 @@
         home.username = me;
         home.homeDirectory = "/home/${me}";
 
-        imports = [ ../../home/${me} ];
+        imports = [ ./home ]
 
         home.stateVersion = "25.05";
         programs.home-manager.enable = true;
