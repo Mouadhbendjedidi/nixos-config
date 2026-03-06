@@ -60,6 +60,7 @@
 
   # zsh btw!
   programs.zsh.enable = true;
+  programs.bash.enable = true;
   
   # add experimental features
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

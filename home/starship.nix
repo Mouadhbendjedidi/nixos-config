@@ -4,38 +4,34 @@
     enable = true;
 
     enableZshIntegration = true;
+    enableBashIntegration = true;
 
     settings = {
       add_newline = true;
 
       format = ''
-        $os$username$directory$git_branch$git_status$nix_shell
+        $username$hostname$directory$git_branch$git_status$nix_shell
         $character'';
-
-      os = {
-        disabled = false;
-	style = "blue";
-
-        symbols = {
-	  NixOS = " ";
-	  Debian = "";
-	  Android = "";
-	  Arch = "󰣇 ";
-	};
-      };
 
       username = {
         disabled = false;
 	show_always = true;
 	style_user = "green bold";
 	style_root = "red bold";
-	format = " [ $user]($style) ";
+	format = "[ $user]($style) ";
+      };
+
+      hostname = {
+        disabled = false;
+	ssh_only = true;
+	ssh_symbol = " ";
+	format = "in [$ssh_symbol$hostname](bold blue)";
       };
 
       character = {
         disabled = false;
-        success_symbol = "[❯](green)";
-        error_symbol = "[❯](red)";
+        success_symbol = "[󱞪](green)";
+        error_symbol = "[󱞪](red)";
       };
 
       directory = {
@@ -49,7 +45,7 @@
 
       git_branch = {
         symbol = " ";
-        style = "bold green";
+        style = "bold red";
         format = "on [$symbol$branch]($style) ";
       };
 
