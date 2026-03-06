@@ -32,7 +32,7 @@
         home.username = sis;
         home.homeDirectory = "/home/${sis}";
 
-        imports = [ ../../home/${sis} ];
+        imports = [ ./home ];
 
         home.stateVersion = "25.05";
         programs.home-manager.enable = true;

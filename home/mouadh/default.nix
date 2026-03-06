@@ -33,7 +33,7 @@
         home.username = me;
         home.homeDirectory = "/home/${me}";
 
-        imports = [ ./home ]
+        imports = [ ./home ];
 
         home.stateVersion = "25.05";
         programs.home-manager.enable = true;

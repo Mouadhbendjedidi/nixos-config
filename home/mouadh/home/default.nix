@@ -3,8 +3,8 @@
   imports = [
     ./shells
     ./fzf.nix
-    ./starship
-    ./zoxide
-    ./packages
+    ./starship.nix
+    ./zoxide.nix
+    ./packages.nix
   ];
 }
