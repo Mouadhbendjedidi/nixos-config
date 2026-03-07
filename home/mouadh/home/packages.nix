@@ -8,5 +8,6 @@
     bat
     ripgrep
     git
+    fastfetch
   ];
 }
