@@ -65,8 +65,6 @@
 
   security.pki.certificateFiles = [ ../../certs/ca.pem ];
 
-  programs.ssh.startAgent = true;
-
   programs.firefox.enable = true;
 
   # List packages installed in system profile.
