@@ -4,5 +4,6 @@
     ./networking.nix
     ./ssh.nix
     ./fonts.nix
+    ./extras.nix
   ];
 }

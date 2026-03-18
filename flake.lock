@@ -75,11 +75,28 @@
         "type": "github"
       }
     },
+    "prism94": {
+      "locked": {
+        "lastModified": 1750127977,
+        "narHash": "sha256-zD1OwL7YRiurl1NW16Ke88S7JStBfawbiY/DVpS28P4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "28ace32529a63842e4f8103e4f9b24960cf6c23a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "28ace32529a63842e4f8103e4f9b24960cf6c23a",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "prism94": "prism94"
       }
     }
   },
