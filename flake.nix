@@ -11,6 +11,9 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # dooit.url = "github:dooit-org/dooit";
+    # dooit-extras.url = "github:dooit-org/dooit-extras";
+
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, prism94, ... }@inputs: 
