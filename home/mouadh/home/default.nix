@@ -7,5 +7,6 @@
     ./zoxide.nix
     ./packages.nix
     ./fastfetch
+    ./tmux.nix
   ];
 }
