@@ -1,2 +1,2 @@
 deploy:
-  nixos-rebuild switch --flake .
+  sudo nixos-rebuild switch --flake .
