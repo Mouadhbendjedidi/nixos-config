@@ -9,5 +9,7 @@
     ripgrep
     git
     fastfetch
+    dooit
+    dooit-extras
   ];
 }
