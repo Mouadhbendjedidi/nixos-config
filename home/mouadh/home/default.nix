@@ -8,5 +8,6 @@
     ./packages.nix
     ./fastfetch
     ./tmux.nix
+    ./dooit.nix
   ];
 }
