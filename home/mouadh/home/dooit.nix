@@ -42,8 +42,8 @@
         cyan: str = "#89dceb"
 
         # accent colors
-        primary: str = purple
-        secondary: str = blue
+        primary: str = green
+        secondary: str = red
 
 
     @subscribe(Startup)
