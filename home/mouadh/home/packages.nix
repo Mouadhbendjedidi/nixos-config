@@ -9,7 +9,8 @@
     ripgrep
     git
     fastfetch
-    dooit
-    dooit-extras
+    (dooit.overrideAttrs (old: {
+      propagatedBuildInputs = old.propagatedBuildInputs ++ [ dooit-extras ];
+    }))
   ];
 }
