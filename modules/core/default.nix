@@ -5,6 +5,6 @@
     ./ssh.nix
     ./fonts.nix
     ./extras.nix
-    # ./dooit.nix
+    ./timezone.nix
   ];
 }
