@@ -36,7 +36,7 @@
       set -g @pomodoro_prompt_pomodoro "#[fg=$color_gray] ? "   # The formatted output when waiting to start a Pomodoro
 
       set -g @pomodoro_menu_position "R"             # The location of the menu relative to the screen
-      set -g @pomodoro_sound 'on'                   # Sound for desktop notifications (Run `ls /System/Library/Sounds` for a list of sounds to use on Mac)
+      set -g @pomodoro_sound 'powershell.exe -c "(New-Object Media.SoundPlayer 'C:\Windows\Media\Notify.wav').PlaySync()"'                   # Sound for desktop notifications (Run `ls /System/Library/Sounds` for a list of sounds to use on Mac)
                                                      # (On Linux add `on` to use the `beep` program or add your custom beeping command)
 
       set -g @pomodoro_notifications 'on'           # Enable desktop notifications from your terminal
