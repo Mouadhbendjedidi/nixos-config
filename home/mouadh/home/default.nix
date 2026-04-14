@@ -9,5 +9,6 @@
     ./fastfetch
     ./tmux.nix
     ./dooit.nix
+    ./git.nix
   ];
 }
