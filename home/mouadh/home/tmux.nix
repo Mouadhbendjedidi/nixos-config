@@ -9,16 +9,6 @@
       sensible
       vim-tmux-navigator
       yank
-      {
-        plugin = catppuccin;
-        extraConfig = ''
-          set -g @catppuccin_flavor "mocha"
-          set -g @catppuccin_status_background "none"
-          set -g @catppuccin_window_status_style "none"
-          set -g @catppuccin_pane_status_enabled "off"
-          set -g @catppuccin_pane_border_status "off"
-        '';
-      }
     ];
     extraConfig = ''
       set-option -sa terminal-overrides ",xterm*:Tc"
@@ -52,6 +42,11 @@
       set -g @pomodoro_notifications 'on'           # Enable desktop notifications from your terminal
       set -g @pomodoro_granularity 'on'             # Enables MM:SS (ex: 00:10) format instead of the default (ex: 1m)
       set -g status-interval 1
+
+      # set evergarden theme
+      set -gq @evergarden_style "winter"
+
+      run ~/.config/tmux/plugins/evergarden-tmux/evergarden.sh
 
       # config status bar
 
