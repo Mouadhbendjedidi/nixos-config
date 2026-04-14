@@ -4,6 +4,7 @@
     (dooit.overrideAttrs (old: {
       propagatedBuildInputs = old.propagatedBuildInputs ++ [ dooit-extras ];
     }))
+  ];
 
   home.file.".config/dooit/config.py".text = ''
     from dooit.api import Todo
@@ -146,5 +147,5 @@
             Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
         ]
         api.dashboard.set(items)
-  ''
+  '';
 }
