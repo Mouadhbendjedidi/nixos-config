@@ -120,7 +120,6 @@
       `.              ,  \ \ /  |
        /`.          ,'-`----Y   |
       (            ;        |   '
-      C:\Users\pc info\Downloads\tmux-main\README.mdu
       |  ,-.    ,-'         |  /
       |  | (   |      TODOS | /
       )  |  \  `.___________|/

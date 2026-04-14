@@ -44,9 +44,29 @@
       set -g status-interval 1
 
       # set evergarden theme
-      set -gq @evergarden_style "winter"
 
-      run ~/.config/tmux/plugins/evergarden-tmux/evergarden.sh
+      set -ogq @thm_accent "#cae0a7"
+      set -ogq @thm_crust "#171c1f"
+      set -ogq @thm_mantle "#191e21"
+      set -ogq @thm_base "#1d2428"
+      set -ogq @thm_surface0 "#2d393d"
+      set -ogq @thm_surface1 "#3d494d"
+      set -ogq @thm_surface2 "#4a585c"
+      set -ogq @thm_overlay0 "#58686d"
+      set -ogq @thm_overlay1 "#6f8788"
+      set -ogq @thm_overlay2 "#839e9a"
+      set -ogq @thm_subtext0 "#96b4aa"
+      set -ogq @thm_subtext1 "#adc9bc"
+      set -ogq @thm_text "#f8f9e8"
+      set -ogq @thm_red "#f57f82"
+      set -ogq @thm_orange "#f7a182"
+      set -ogq @thm_yellow "#f5d098"
+      set -ogq @thm_green "#cae0a7"
+      set -ogq @thm_aqua "#addeb9"
+      set -ogq @thm_skye "#ace0d4"
+      set -ogq @thm_blue "#b2cfed"
+      set -ogq @thm_purple "#d0bbf0"
+      set -ogq @thm_pink "#f3c0e5"
 
       # config status bar
 
@@ -55,7 +75,7 @@
       set -g status-left ""
       set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=#{@thm_bg},fg=#{@thm_green}]  #S }}"
       set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
-      set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_maroon}]  #{pane_current_command} "
+      set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_red}]  #{pane_current_command} "
       set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]│"
       set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
       set -ga status-left "#[bg=#{@thm_bg},fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
