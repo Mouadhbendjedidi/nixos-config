@@ -76,7 +76,7 @@
         fmt.todos.effort.add(effort_icon(icon="󱠇 "))
 
         # --------- DESCRIPTION ---------
-        format = Text("  {completed_count}/{total_count}", style=theme.green).markup
+        format = Text("  {completed_count}/{total_count}", style=theme.green).markup
         fmt.todos.description.add(todo_description_progress(fmt=format))
         fmt.todos.description.add(description_highlight_tags(fmt="󰌪 {}"))
         fmt.todos.description.add(description_strike_completed())
@@ -150,6 +150,8 @@
             "",
             "",
             Text("Will you finish what is waiting?", style=theme.secondary),
+	    Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),
+	    Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
         ]
         api.dashboard.set(items)
 
