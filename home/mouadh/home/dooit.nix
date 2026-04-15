@@ -21,17 +21,17 @@
     class Evergarden(DooitThemeBase):
         _name: str = "dooit-evergarden"
 
-        # background colors
+        # ------- BACKGROUND COLORS -------
         background1: str = "#1d2428"  # Darkest
         background2: str = "#191E21"
         background3: str = "#171C1F"  # Lightest
 
-        # foreground colors
+        # ------- FOREGROUND COLORS -------
         foreground1: str = "#96B4AA"  # Lightest
         foreground2: str = "#ADC9BC"
         foreground3: str = "#F8F9E8"  # Darkest
 
-        # other colors
+        # ------- OTHER COLORS -------
         red: str = "#f57f82"
         orange: str = "#F7A182"
         yellow: str = "#f5d098"
@@ -41,7 +41,7 @@
         magenta: str = "#F3C0E5"
         cyan: str = "#addeb9"
 
-        # accent colors
+        # ------- ACCENT COLORS -------
         primary: str = green
         secondary: str = blue
 
@@ -64,18 +64,18 @@
         # status formatter
         fmt.todos.status.add(status_icons(completed="󱓻 ", pending="󱓼 ", overdue="󱓼 "))
 
-        # urgency formatter
+        # --------- URGENCY ---------
         u_icons = {1: "  󰯬", 2: "  󰯯", 3: "  󰯲", 4: "  󰯵"}
         fmt.todos.urgency.add(urgency_icons(icons=u_icons))
 
-        # due formatter
+        # --------- DUE ---------
         fmt.todos.due.add(due_casual_format())
         fmt.todos.due.add(due_icon(completed="󰐅 ", pending="󱢗 ", overdue="󱐚 "))
 
-        # effort formatter
+        # --------- EFFORT ---------
         fmt.todos.effort.add(effort_icon(icon="󱠇 "))
 
-        # description formatter
+        # --------- DESCRIPTION ---------
         format = Text("  {completed_count}/{total_count}", style=theme.green).markup
         fmt.todos.description.add(todo_description_progress(fmt=format))
         fmt.todos.description.add(description_highlight_tags(fmt="󰌪 {}"))
@@ -86,8 +86,10 @@
     def setup_layout(api: DooitAPI, _):
         api.layouts.todo_layout = [
             TodoWidget.status,
+	    TodoWidget.effort,
             TodoWidget.description,
             TodoWidget.due,
+	    TodoWidget.recurrence
         ]
 
 
@@ -106,7 +108,7 @@
             Powerline.right_rounded(api, fg=theme.primary),
             Spacer(api, width=0),
             Powerline.left_rounded(api, fg=theme.primary),
-            Ticker(api, fmt=" 󱎫 {} "),
+	    WorkspaceProgress(api, fmt=" 󰞯 {}% "),
             Powerline.left_rounded(api, fg=theme.yellow, bg=theme.primary),
             Clock(api, format="%H:%M", fmt=" 󰥔 {} ", bg=theme.yellow),
         ]
@@ -124,21 +126,21 @@
            '_\V/ `
            ' oX`
               X                             
-              X            Help, I can't finish! 
+              X            Help, BAC is close! 
               X          -                                      .
               X        \O/                                      |\
               X.a##a.   M                                       |_\
            .aa########a.>>                                 _____|_____
-        .a################aa.                              \  DOOIT  /
+        .a################aa.                              \   BAC   /
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     """
 
         ascii_art = Text(ascii_art, style=theme.primary)
-        ascii_art.highlight_words([" Help, I can't finish! "], style="reverse")
-        ascii_art.highlight_words([" DOOIT "], style=theme.secondary)
+        ascii_art.highlight_words([" Help, BAC is close! "], style="reverse")
+        ascii_art.highlight_words([" BAC "], style=theme.secondary)
 
         header = Text(
-            "Welcome again to your daily life, piled with unfinished tasks!",
+            "Welcome again to your daily life, piled with unfinished courses!",
             style=Style(color=theme.secondary, bold=True, italic=True),
         )
 
@@ -147,7 +149,7 @@
             ascii_art,
             "",
             "",
-            Text("Will you finish your tasks today?", style=theme.secondary),
+            Text("Will you finish what is waiting?", style=theme.secondary),
         ]
         api.dashboard.set(items)
 
