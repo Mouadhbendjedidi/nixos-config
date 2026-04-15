@@ -18,8 +18,8 @@
     from rich.text import Text
 
 
-    class Everforest(DooitThemeBase):
-        _name: str = "dooit-everforest"
+    class Evergarden(DooitThemeBase):
+        _name: str = "dooit-evergarden"
 
         # background colors
         background1: str = "#1d2428"  # Darkest
@@ -48,7 +48,7 @@
 
     @subscribe(Startup)
     def setup_colorscheme(api: DooitAPI, _):
-        api.css.set_theme(Everforest)
+        api.css.set_theme(Evergarden)
 
 
     @subscribe(Startup)
@@ -64,7 +64,7 @@
         # status formatter
         fmt.todos.status.add(status_icons(completed="󱓻 ", pending="󱓼 ", overdue="󱓼 "))
 
-        # urgency formatte
+        # urgency formatter
         u_icons = {1: "  󰯬", 2: "  󰯯", 3: "  󰯲", 4: "  󰯵"}
         fmt.todos.urgency.add(urgency_icons(icons=u_icons))
 
@@ -76,7 +76,7 @@
         fmt.todos.effort.add(effort_icon(icon="󱠇 "))
 
         # description formatter
-        format = Text("  {completed_count}/{total_count}", style=theme.green).markup
+        format = Text("  {completed_count}/{total_count}", style=theme.green).markup
         fmt.todos.description.add(todo_description_progress(fmt=format))
         fmt.todos.description.add(description_highlight_tags(fmt="󰌪 {}"))
         fmt.todos.description.add(description_strike_completed())
