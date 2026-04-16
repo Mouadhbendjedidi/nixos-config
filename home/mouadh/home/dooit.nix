@@ -139,6 +139,9 @@ def setup_dashboard(api: DooitAPI, _):
     ascii_art.highlight_words([" Help, BAC is close! "], style="reverse")
     ascii_art.highlight_words([" BAC "], style=theme.secondary)
 
+    due_today = sum([1 for i in Todo.all() if i.is_due_today and i.is_pending])
+    overdue = sum([1 for i in Todo.all() if i.is_overdue])
+
     header = Text(
         "Welcome again to your daily life, piled with unfinished courses!",
         style=Style(color=theme.secondary, bold=True, italic=True),
