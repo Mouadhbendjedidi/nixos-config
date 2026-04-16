@@ -16,6 +16,7 @@
     from dooit_extras.bar_widgets import *
     from dooit_extras.scripts import *
     from rich.text import Text
+    from datetime import datetime
 
 
     class Evergarden(DooitThemeBase):
@@ -61,7 +62,6 @@
         fmt.workspaces.description.add(description_children_count(format))
 
         # --------- TODOS ---------
-        # status formatter
         fmt.todos.status.add(status_icons(completed="󱓻 ", pending="󱓼 ", overdue="󱓼 "))
 
         # --------- URGENCY ---------
@@ -76,7 +76,7 @@
         fmt.todos.effort.add(effort_icon(icon="󱠇 "))
 
         # --------- DESCRIPTION ---------
-        format = Text("  {completed_count}/{total_count}", style=theme.yellow).markup
+        format = Text("  {completed_count}/{total_count}", style=theme.yellow).markup
         fmt.todos.description.add(todo_description_progress(fmt=format))
         fmt.todos.description.add(description_highlight_tags(fmt="󰌪 {}"))
         fmt.todos.description.add(description_strike_completed())
@@ -86,10 +86,10 @@
     def setup_layout(api: DooitAPI, _):
         api.layouts.todo_layout = [
             TodoWidget.status,
-	    TodoWidget.effort,
+            TodoWidget.effort,
             TodoWidget.description,
             TodoWidget.due,
-	    TodoWidget.recurrence
+            TodoWidget.recurrence
         ]
 
 
@@ -108,7 +108,7 @@
             Powerline.right_rounded(api, fg=theme.primary),
             Spacer(api, width=0),
             Powerline.left_rounded(api, fg=theme.primary),
-	    WorkspaceProgress(api, fmt=" 󰞯 {}% "),
+            WorkspaceProgress(api, fmt=" 󰞯 {}% "),
             Powerline.left_rounded(api, fg=theme.yellow, bg=theme.primary),
             Clock(api, format="%H:%M", fmt=" 󰥔 {} ", bg=theme.yellow),
         ]
@@ -118,6 +118,13 @@
     @subscribe(Startup)
     def setup_dashboard(api: DooitAPI, _):
         theme = api.vars.theme
+
+        bac = datetime(2026, 6, 7)
+        now = datetime.now()
+        delta = bac - now
+        days = delta.days
+        hours, remainder = divmod(delta.seconds, 3600)
+        minutes = remainder // 60
 
         ascii_art = r"""
                                                         ____
@@ -148,10 +155,14 @@
             header,
             ascii_art,
             "",
+            Text(
+                f"  󰃭 BAC in {days} days, {hours} hours, {minutes} minutes",
+                style=Style(color=theme.red, bold=True),
+            ),
             "",
             Text("Will you finish what is waiting?", style=theme.secondary),
-	    Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),
-	    Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
+            Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),
+            Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
         ]
         api.dashboard.set(items)
 
