@@ -138,7 +138,7 @@ def setup_dashboard(api: DooitAPI, _):
 
     ascii_art = Text(ascii_art, style=theme.primary)
     ascii_art.highlight_words([" Help, BAC is close! "], style="reverse")
-    ascii_art.highlight_words([" BAC "], style=theme.secondary)
+    ascii_art.highlight_words([" STUDY "], style=theme.secondary)
 
     due_today = sum([1 for i in Todo.all() if i.is_due_today and i.is_pending])
     overdue = sum([1 for i in Todo.all() if i.is_overdue])
@@ -154,6 +154,7 @@ def setup_dashboard(api: DooitAPI, _):
         "",
         "",
         Text("Will you finish what is waiting?", style=theme.secondary),
+	"",
         Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),
         Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
     ]
