@@ -131,7 +131,7 @@
            X        \O/                                      |\
            X.a##a.   M                                       |_\
         .aa########a.>>                                 _____|_____
-     .a################aa.                              \   BAC   /
+     .a################aa.                              \  STUDY  /
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  """
 
@@ -150,6 +150,8 @@
          "",
          "",
          Text("Will you finish what is waiting?", style=theme.secondary),
+	 Text("󰠠 Tasks pending today: {}".format(due_today), style=theme.green),
+         Text("󰁇 Tasks still overdue: {}".format(overdue), style=theme.red),
      ]
      api.dashboard.set(items)
 
