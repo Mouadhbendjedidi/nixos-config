@@ -8,6 +8,7 @@
     bat
     ripgrep
     git
-    fastfetch
+    catppuccin-whiskers
+    catppuccin-catwalk
   ];
 }
