@@ -86,8 +86,9 @@
       set -ga status-right "#[bg=#{@thm_bg},fg=#{@thm_blue}] 󰭦 %Y-%m-%d 󰅐 %H:%M "
       
       # Configure Tmux
-      set -g status-position top
-      set -g status-style "bg=#{@thm_bg}"
+      set -g status-position bottom
+      # set -g status-style "bg=#{@thm_bg}"
+      set -g status-style "bg=#00000000"
       set -g status-justify "absolute-centre"
 
       # pane border look and feel
@@ -102,8 +103,8 @@
       set -g automatic-rename-format "Window"
 
       set -g window-status-format " #I#{?#{!=:#{window_name},Window},: #W,} "
-      set -g window-status-style "bg=#{@thm_bg},fg=#{@thm_pink}"
-      set -g window-status-last-style "bg=#{@thm_bg},fg=#{@thm_orange}"
+      set -g window-status-style "bg=#{@thm_bg},fg=#{@thm_overlay_0}"
+      set -g window-status-last-style "bg=#{@thm_bg},fg=#{@thm_green}"
       set -g window-status-activity-style "bg=#{@thm_red},fg=#{@thm_bg}"
       set -g window-status-bell-style "bg=#{@thm_red},fg=#{@thm_bg},bold"
       set -gF window-status-separator "#[bg=#{@thm_bg},fg=#{@thm_overlay_0}]│"
