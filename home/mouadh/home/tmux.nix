@@ -87,8 +87,7 @@
       
       # Configure Tmux
       set -g status-position bottom
-      # set -g status-style "bg=#{@thm_bg}"
-      set -g status-style "bg=#00000000"
+      set -g status-style "bg=#{@thm_bg}"
       set -g status-justify "absolute-centre"
 
       # pane border look and feel
