@@ -21,21 +21,34 @@
       me = "mouadh";
       sis = "aridj";
       system = "x86_64-linux";
+
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      myPkgs = import ./pkgs {
+        inherit pkgs;
+        inherit (pkgs) lib;
+      };
     in
     {
+
+      packages.${system} = myPkgs;
+
       nixosConfigurations = {
         
         diablo = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/diablo ];
-          specialArgs = { host = "diablo"; inherit self inputs me; };
+          specialArgs = { host = "diablo"; inherit myPkgs self inputs me; };
 
         };
 
         shion = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [ ./hosts/shion ];
-          specialArgs = { host = "shion"; inherit self inputs sis; };
+          specialArgs = { host = "shion"; inherit myPkgs self inputs sis; };
         
         };
       };

@@ -1,4 +1,4 @@
-{ pkgs, inputs, me, host, ... }:
+{ pkgs, myPkgs, inputs, me, host, ... }:
 {
 
   imports = [ 
@@ -24,7 +24,7 @@
 
   home-manager = {
     
-    extraSpecialArgs = { inherit inputs me host; };
+    extraSpecialArgs = { inherit inputs me host myPkgs; };
     useUserPackages = true;
     useGlobalPkgs = true;
     

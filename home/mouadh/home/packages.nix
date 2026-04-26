@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, myPkgs, ... }:
 {
   home.packages = with pkgs; [
     nnn
@@ -10,5 +10,6 @@
     git
     catppuccin-whiskers
     catppuccin-catwalk
+    myPkgs.instagram-cli
   ];
 }
