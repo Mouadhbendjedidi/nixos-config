@@ -2,22 +2,27 @@
   description = "Mouadh's flake";
 
   inputs = {
+ 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    prism94.url = "github:NixOS/nixpkgs/28ace32529a63842e4f8103e4f9b24960cf6c23a";
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+    prism94.url = "github:NixOS/nixpkgs/28ace32529a63842e4f8103e4f9b24960cf6c23a"; # pinning prismlauncher 9.4 for minecraft offline works
 
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
 
-    # dooit.url = "github:dooit-org/dooit";
-    # dooit-extras.url = "github:dooit-org/dooit-extras";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
 
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, prism94, ... }@inputs: 
+
     let
+
       me = "mouadh";
       sis = "aridj";
       system = "x86_64-linux";
@@ -31,6 +36,7 @@
         inherit pkgs;
         inherit (pkgs) lib;
       };
+
     in
     {
 

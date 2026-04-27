@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     (dooit.overrideAttrs (old: {
       propagatedBuildInputs = old.propagatedBuildInputs ++ [ dooit-extras ];
-    }))
+    })) # i fixed dooit since i found it on nixpkgs by overriding dooit to match dooit-extras py env so i can rice it with evergarden!
   ];
 
   home.file.".config/dooit/config.py".text = ''

@@ -1,5 +1,7 @@
 { pkgs, ... }:
+
 {
+
   programs.delta = {
     enable = true;
     enableGitIntegration = true;
@@ -12,28 +14,30 @@
   programs.git = {
     enable = true;
     signing = {
-      signByDefault = true;
+      signByDefault = true; # adding verified commits!
     };
     settings = {
-      user.name = "Mouadhbendjedidi";
-      user.email = "alfadjr2007@gmail.com";
-      commit.gpgsign = true;
+      user.name = "Mouadhbendjedidi"; # My Name!
+      user.email = "alfadjr2007@gmail.com"; # My Email!
+      commit.gpgsign = true; # gpg sign enabled
       gpg.format = "ssh";
       gpg.ssh.allowedSignersFile = "~/.config/git/allowed_signers";
-      user.signingKey = "~/.ssh/id_ed25519.pub";
-      gpg.ssh.signingKey = "~/.ssh/id_ed25519.pub";
-      core.editor = "nvim";
+      user.signingKey = "~/.ssh/id_ed25519.pub"; # my sign key
+      gpg.ssh.signingKey = "~/.ssh/id_ed25519.pub"; # my sign key
+      core.editor = "nvim"; # still not moved to neovim but i will still on vscode :(
       init.defaultBranch = "main";
       pull.rebase = true;
       merge.conflictstyle = "diff3";
+
       diff.colorMoved = "default";
       "url \"http://gitea.veldora.bn/\"".insteadOf = "gitea:";
       "url \"https://github.com/\"".insteadOf = "gh:";
+
       alias = {
+        a = "add";
+	aa = "add .";
         s  = "status";
-        st = "status --short --branch";
         lg = "log --oneline --graph --decorate --all";
-        co = "checkout";
         br = "branch";
       };
     };

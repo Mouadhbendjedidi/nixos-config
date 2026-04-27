@@ -8,5 +8,7 @@
     ll = "eza -lha --icons=auto --sort=name --group-directories-first";
     ls = "eza -1 --icons=auto";
     ld = "eza -lhD --icons=auto";
+
+    instagram = "instagram-cli";
   };
 }
