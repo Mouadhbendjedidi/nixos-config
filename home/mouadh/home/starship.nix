@@ -38,9 +38,31 @@
         style = "blue";
         truncation_length = 4;
         truncation_symbol = "…/";
+	home_symbol = "󰋞 ";
         read_only_style = "red";
         read_only = "  ";
-        format = "[$path]($style)[$read_only]($read_only_style) ";
+        format = "[at $path]($style)[$read_only]($read_only_style) ";
+
+	substitutions = {
+          "󰋞 /Documents" = "󰈙 ";
+          "󰋞 /documents" = "󰈙 ";
+
+          "󰋞 /Downloads" = " ";
+          "󰋞 /downloads" = " ";
+
+          "󰋞 /media/music" = " ";
+          "󰋞 /media/pictures" = " ";
+          "󰋞 /media/videos" = " ";
+          "󰋞 /Music" = " ";
+          "󰋞 /Pictures" = " ";
+          "󰋞 /Videos" = " ";
+
+          "󰋞 /dev" = "󱌢 ";
+          "󰋞 /Dev" = "󱌢 ";
+
+          "󰋞 /study" = "󰑴 ";
+          "󰋞 /.config" = " ";
+	  };
       };
 
       git_branch = {
@@ -62,7 +84,7 @@
         stashed = "[ ($count) ](blue)";
       };
 
-      nix_shell = { disabled = false; format = "[on  Nix Shell](blue)"; };
+      nix_shell = { disabled = false; format = "[  Nix Shell](blue)"; };
 
       line_break = { disabled = false; };
     };
