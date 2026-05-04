@@ -36,7 +36,7 @@
 
       directory = {
         style = "blue";
-        truncation_length = 4;
+        truncation_length = 6;
         truncation_symbol = "…/";
 	home_symbol = "󰋞 ";
         read_only_style = "red";
