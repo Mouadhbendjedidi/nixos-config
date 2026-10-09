@@ -7,5 +7,8 @@
     neovim
     myPkgs.prismlauncher
     kitty
+    zapzap
+    telegram-desktop
+    vesktop
   ];
 }
