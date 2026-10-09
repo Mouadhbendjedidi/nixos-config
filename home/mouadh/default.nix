@@ -12,7 +12,7 @@
   users.users.${me} = {
     isNormalUser = true;
     description = me;
-    extraGroups = [ "wheel" ]; # Sudo access
+    extraGroups = [ "wheel" "networkmanager" ]; # Sudo access
     shell = pkgs.zsh;
     home = "/home/${me}";
   };

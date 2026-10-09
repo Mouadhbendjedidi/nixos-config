@@ -5,5 +5,6 @@
     catppuccin-catwalk
     myPkgs.instagram-cli
     neovim
+    myPkgs.prismlauncher
   ];
 }
