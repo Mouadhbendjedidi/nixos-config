@@ -11,5 +11,6 @@
     ./dooit.nix
     ./git.nix
     ./brave.nix
+    ./gnome.nix
   ];
 }
