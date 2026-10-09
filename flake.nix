@@ -50,6 +50,12 @@
 
         };
 
+	remuru = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ ./hosts/remuru ];
+          specialArgs = { host = "remuru"; inherit myPkgs self inputs me; };
+        };
+
       };
     };
 }

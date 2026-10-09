@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, me, ... }:
 {
   imports = [
     ../../modules/core
@@ -22,6 +22,9 @@
     LC_TELEPHONE = "ar_DZ.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  users.users.${me}.extraGroups = [ "networkmanager" ];
+
     # Enable the X11 windowing system.
   services.xserver.enable = true;
 
