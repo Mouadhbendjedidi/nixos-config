@@ -32,7 +32,7 @@
       };
 
       myPkgs = import ./pkgs {
-        inherit pkgs;
+        inherit pkgs system prism94;
         inherit (pkgs) lib;
       };
 
