@@ -24,7 +24,6 @@
     let
 
       me = "mouadh";
-      sis = "aridj";
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
@@ -51,12 +50,6 @@
 
         };
 
-        shion = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [ ./hosts/shion ];
-          specialArgs = { host = "shion"; inherit myPkgs self inputs sis; };
-        
-        };
       };
     };
 }
