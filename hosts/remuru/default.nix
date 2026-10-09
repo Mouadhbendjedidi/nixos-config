@@ -4,6 +4,7 @@
     ../../modules/core
     ../../home/mouadh
     ./hardware-configuration.nix
+    ../../modules/desktop/plymouth.nix
   ];
 
   services.gnome.gcr-ssh-agent.enable = false;
