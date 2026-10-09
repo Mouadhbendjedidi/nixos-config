@@ -10,5 +10,6 @@
     ./tmux.nix
     ./dooit.nix
     ./git.nix
+    ./brave.nix
   ];
 }

@@ -6,7 +6,6 @@
     myPkgs.instagram-cli
     neovim
     myPkgs.prismlauncher
-    firefox
     kitty
   ];
 }
