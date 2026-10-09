@@ -5,6 +5,8 @@
     ../../home/mouadh
     ./hardware-configuration.nix
   ];
+
+  services.gnome.gcr-ssh-agent.enable = false;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

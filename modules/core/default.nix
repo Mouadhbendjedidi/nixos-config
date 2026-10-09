@@ -6,5 +6,6 @@
     ./fonts.nix
     ./extras.nix
     ./timezone.nix
+    ./certs.nix
   ];
 }
