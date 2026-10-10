@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "evergarden": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1789236781,
+        "narHash": "sha256-pRyXTLmOo8O47KYvzESvv9d2AxNSgbu3AUR0TKe9ig8=",
+        "rev": "96e93086db475eed54d9211874e0b19a592d8d45",
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/evergarden/nix/archive/96e93086db475eed54d9211874e0b19a592d8d45.tar.gz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://codeberg.org/evergarden/nix/archive/main.tar.gz"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -61,6 +77,22 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1772674223,
+        "narHash": "sha256-/suKbHSaSmuC9UY7G0VRQ3aO+QKqxAQPQ19wG7QNkF8=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "66d9241e3dc2296726dc522e62dbfe89c7b449f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1791456040,
         "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
         "owner": "NixOS",
@@ -71,6 +103,22 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1741037377,
+        "narHash": "sha256-SvtvVKHaUX4Owb+PasySwZsoc5VUeTf1px34BByiOxw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "02032da4af073d0f6110540c8677f16d4be0117f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -93,10 +141,51 @@
     },
     "root": {
       "inputs": {
+        "evergarden": "evergarden",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs",
-        "prism94": "prism94"
+        "nixpkgs": "nixpkgs_2",
+        "prism94": "prism94",
+        "wallpapers": "wallpapers"
+      }
+    },
+    "wallpapers": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "whiskers": "whiskers"
+      },
+      "locked": {
+        "lastModified": 1749284350,
+        "narHash": "sha256-Zdpof9aJv54X7lwa/lO1xUESnnfggV+BgEcPgtIE/D4=",
+        "owner": "everviolet",
+        "repo": "wallpapers",
+        "rev": "8a518dde12e5e91cf0670ea2b129e357f5e5a251",
+        "type": "github"
+      },
+      "original": {
+        "owner": "everviolet",
+        "repo": "wallpapers",
+        "type": "github"
+      }
+    },
+    "whiskers": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1748987544,
+        "narHash": "sha256-ONkJqZrCe7UX/uz1TRb9934Y02N06rVBW2M+PElUHP0=",
+        "owner": "everviolet",
+        "repo": "whiskers",
+        "rev": "a0b7df42a32936a037a19cfa0d5589a6d4b2aa3b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "everviolet",
+        "repo": "whiskers",
+        "type": "github"
       }
     }
   },

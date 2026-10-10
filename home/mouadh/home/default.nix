@@ -12,5 +12,7 @@
     ./git.nix
     ./brave.nix
     ./gnome.nix
+    ./evergarden.nix
+    ./ghostty.nix
   ];
 }

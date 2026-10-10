@@ -17,6 +17,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
       };
 
+    evergarden.url = "https://codeberg.org/evergarden/nix/archive/main.tar.gz";
+
+    wallpapers = {
+      url = "github:everviolet/wallpapers";
+      inputs.nixpkgs.follows = "nixpkgs";
+      };
+
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, prism94, ... }@inputs: 
