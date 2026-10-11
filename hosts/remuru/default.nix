@@ -9,6 +9,8 @@
     ../../modules/hardware/nvidia.nix
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   services.gnome.gcr-ssh-agent.enable = false;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
