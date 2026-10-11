@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ../../modules/desktop/plymouth.nix
     ../../modules/desktop/wallpapers-evergarden.nix
+    ../../modules/hardware/nvidia.nix
   ];
 
   services.gnome.gcr-ssh-agent.enable = false;
@@ -35,6 +36,10 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  programs.kdeconnect = {
+    enable = true;
+    package = pkgs.gnomeExtensions.gsconnect;
+  };
   programs.hyprland = {
   enable = true;
   withUWSM = true;

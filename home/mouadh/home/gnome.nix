@@ -14,12 +14,11 @@
       ];
       enabled-extensions = [ 
         "dash-to-dock@micxgx.gmail.com"
-        "clipboard-indicator@tudmotu@gmail.com"
+        "clipboard-indicator@tudmotu.com"
+	"gsconnect@andyholmes.github.io"
       ];
     };
-  };
 
-  dconf.settings = {
     "org/gnome/desktop/input-sources" = {
       sources = [
         (lib.hm.gvariant.mkTuple [ "xkb" "us" ])
