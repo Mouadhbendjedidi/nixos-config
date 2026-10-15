@@ -14,5 +14,6 @@
     ./gnome.nix
     ./evergarden.nix
     ./ghostty.nix
+    ./artcraft.nix
   ];
 }

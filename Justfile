@@ -1,6 +1,9 @@
 deploy:
   sudo nixos-rebuild switch --flake .
 
+build:
+  sudo nixos-rebuild build --flake .
+
 debug:
   sudo nixos-rebuild switch --flake . -v -L
 
