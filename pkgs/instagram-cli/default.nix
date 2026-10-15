@@ -2,15 +2,15 @@
 
 pkgs.buildNpmPackage {
   pname = "instagram-cli";
-  version = "1.4.0";
+  version = "2.0.1";
   src = pkgs.fetchFromGitHub {
     owner = "supreme-gg-gg";
     repo = "instagram-cli";
-    rev = "ts-v1.4.5";
-    hash = "sha256-Ni/+69qBq34pluNDWdqDpfvNXlVLwIhjHLIhl+SbAYA=";
+    rev = "ts-v2.0.1";
+    hash = "sha256-sBRHi/SFbytaF8QICp3RF4bHnSP4GUmd3jfAIZH1YjU=";
   };
 
-  npmDepsHash = "sha256-DJ553OtamDRtVJ6BR0YrfjHIQJ8VIe8d/QPMlmJIW4E=";
+  npmDepsHash = "sha256-NAfk3IZj775aabc3U2Id/JpfE2PdDhUAT+udDv2rrZI=";
   npmDepsFetcherVersion = 2;
   
   meta = with pkgs.lib; {

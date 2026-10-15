@@ -44,6 +44,6 @@
   };
 
   home.file.".config/git/allowed_signers".text = ''
-    alfadjr2007@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO5mu2tvT1ERq+h7ukJmbC1IyOas+oROdwHqJfr1veRm
+    alfadjr2007@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHx26ZBBmBbrCSrJwk5ANAbegmozK7Ux/syxXxmkw+oo
   '';
 }
