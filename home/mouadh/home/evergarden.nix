@@ -10,7 +10,5 @@
     ghostty.enable = true;
     tmux.enable = true;
 
-    # enable the cache
-    cache.enable = true;
   };
 }
