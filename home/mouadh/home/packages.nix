@@ -4,6 +4,7 @@
     catppuccin-whiskers
     catppuccin-catwalk
     myPkgs.instagram-cli
+    myPkgs.apps2samsung
     neovim
     myPkgs.prismlauncher
     zapzap
