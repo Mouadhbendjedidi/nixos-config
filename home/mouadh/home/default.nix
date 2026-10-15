@@ -14,6 +14,5 @@
     ./gnome.nix
     ./evergarden.nix
     ./ghostty.nix
-    ./libreoffice.nix
   ];
 }
