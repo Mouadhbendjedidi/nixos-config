@@ -15,5 +15,6 @@
     ./evergarden.nix
     ./ghostty.nix
     ./artcraft.nix
+    ./niri
   ];
 }
