@@ -1,11 +1,17 @@
-{ ... }:
+{ osConfig, ... }:
 
 {
   programs.fastfetch = {
     enable = true;
     settings = {
       logo = {
-        source = ./diablo_ascii_color.txt;
+        source = 
+	  if osConfig.networking.hostName == "diablo" then
+	    ./diablo_ascii_color.txt
+	  else if osConfig.networking.hostName == "remuru" then
+	    ./remuru_ascii_color.txt
+	  else
+	    ./remuru_ascii_color.txt;
         type = "file-raw";
         padding = {
           right = 2;

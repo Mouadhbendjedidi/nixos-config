@@ -9,10 +9,10 @@
 
   wsl.enable = true;
 
-  programs.nix-ld.enable = true;
+  # username & hostname 
+  wsl.defaultUser = me;
 
-  # add experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  programs.nix-ld.enable = true;
 
   system.stateVersion = "25.05";
 }

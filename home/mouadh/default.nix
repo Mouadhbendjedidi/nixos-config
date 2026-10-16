@@ -6,8 +6,6 @@
     inputs.nixos-wsl.nixosModules.default
   ];
 
-  # username & hostname 
-  wsl.defaultUser = me;
   
   users.users.${me} = {
     isNormalUser = true;

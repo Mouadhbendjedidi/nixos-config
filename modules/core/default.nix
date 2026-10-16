@@ -8,4 +8,6 @@
     ./timezone.nix
     ./certs.nix
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
