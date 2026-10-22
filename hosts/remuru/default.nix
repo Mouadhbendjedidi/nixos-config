@@ -1,4 +1,4 @@
-{ pkgs, me, ... }:
+{ pkgs, me, inputs, ... }:
 {
   imports = [
     ../../modules/core
@@ -6,7 +6,8 @@
     ./hardware-configuration.nix
     ../../modules/desktop/plymouth.nix
     ../../modules/desktop/wallpapers-evergarden.nix
-    ../../modules/hardware/nvidia.nix
+    # ../../modules/hardware/nvidia.nix
+    inputs.niri.nixosModules.niri
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -42,12 +43,11 @@
     enable = true;
     package = pkgs.gnomeExtensions.gsconnect;
   };
-  programs.hyprland = {
-  enable = true;
-  withUWSM = true;
-  xwayland.enable = true;
-  };
 
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
