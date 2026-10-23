@@ -17,5 +17,7 @@
     ./artcraft.nix
     ./niri
     ./hyprland.nix
+    ./cursors.nix
+    ./spicetify.nix
   ];
 }

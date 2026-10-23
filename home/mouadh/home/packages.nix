@@ -10,5 +10,6 @@
     zapzap
     telegram-desktop
     vesktop
+    feishin
   ];
 }

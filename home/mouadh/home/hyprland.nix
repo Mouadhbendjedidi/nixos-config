@@ -19,6 +19,12 @@ in
 {
   imports = [ inputs.caelestia-shell.homeManagerModules.default ];
 
+  programs.caelestia.settings.appearance.transparency = {
+    enabled = true;
+    base = 0.6;    # shell background opacity
+    layers = 0.2;  # extra transparency for layered UI on top
+  };
+
   programs.caelestia = {
     enable = true;
     package = shell;
@@ -34,6 +40,31 @@ in
 
     hl.config({
         input = { kb_layout = "us" },
+	env = {
+            "XCURSOR_THEME,Bibata-Modern-Ice",
+            "XCURSOR_SIZE,24",
+            "HYPRCURSOR_SIZE,24",
+        },
+    
+        decoration = {
+            rounding = 12,               -- window corner radius
+            active_opacity = 1.0,
+            inactive_opacity = 0.9,      -- slightly transparent when unfocused
+    
+            blur = {
+                enabled = true,
+                size = 8,
+                passes = 3,
+                new_optimizations = true, -- big performance win, keep it
+                xray = true,              -- floating windows ignore tiled ones in blur
+                popups = true,            -- blur behind right-click menus etc.
+            },
+        },
+    
+        -- per-window opacity (ghostty gets extra glass)
+        windowrule = {
+            "opacity 0.9 0.85, match:class ^(com.mitchellh.ghostty)$",
+        },
     })
 
     hl.on("hyprland.start", function()

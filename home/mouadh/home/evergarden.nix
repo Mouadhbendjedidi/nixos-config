@@ -8,6 +8,7 @@
     accent = "green";
 
     ghostty.enable = true;
+    spicetify.enable = true;
     tmux.enable = true;
 
   };
