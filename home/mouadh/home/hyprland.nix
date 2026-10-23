@@ -1,12 +1,34 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+
+  cliBase = inputs.caelestia-shell.inputs.caelestia-cli.packages.${system}.default;
+
+  cli = cliBase.overrideAttrs (old: {
+      postInstall = (old.postInstall or "") + "\n" + ''
+      d=$out/${pkgs.python3.sitePackages}/caelestia/data/schemes/evergarden/winter
+      mkdir -p $d
+      cp ${./caelestia/evergarden-dark.txt} $d/dark.txt
+    '';
+  });
+
+  shell = inputs.caelestia-shell.packages.${system}.with-cli.override {
+    caelestia-cli = cli;
+  };
+in
 {
   imports = [ inputs.caelestia-shell.homeManagerModules.default ];
 
   programs.caelestia = {
     enable = true;
-    systemd.enable = false; # started from Hyprland, so it doesn't clash with niri's Noctalia
+    package = shell;
+    systemd.enable = false;
+    settings.paths.wallpaperDir = "/etc/wallpapers";
+    cli = {
+      enable = true;
+      package = cli;
+    };
   };
-
   xdg.configFile."hypr/hyprland.lua".text = ''
     hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 
@@ -17,6 +39,10 @@
     hl.on("hyprland.start", function()
         hl.exec_cmd("caelestia shell -d")
     end)
+
+    hl.env("CAELESTIA_WALLPAPERS_DIR", "/etc/wallpapers")
+    hl.exec_cmd("caelestia scheme set -n evergarden -f winter -m dark")
+
 
     -- Apps and windows
     hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty"))
