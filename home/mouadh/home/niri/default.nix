@@ -35,13 +35,69 @@
     };
   };
 
+
   programs.noctalia = {
     enable = true;
     package = pkgs.noctalia;
-    systemd.enable = true;   # starts with the session, no spawn-at-startup needed
+    systemd.enable = true;
+
     settings = {
-      shell.font = "IoskeleyMono Nerd Font";
-      theme = { mode = "dark"; source = "builtin"; builtin = "Catppuccin"; };
+      shell.font = "IoskeleyMono Nerd Font Mono";
+
+      theme = {
+        mode = "dark";
+        source = "custom";
+        custom_palette = "evergarden";
+      };
+
+      bar.main = {
+        position = "left";
+        thickness = 56;
+        margin_ends = 10;
+        radius = 16;
+        capsule = true;
+        start = [ "launcher" "workspaces" ];
+        center = [ "clock" ];
+        end = [ "tray" "notifications" "network" "bluetooth" "volume" "control-center" "session" ];
+      };
+    };
+
+    customPalettes.evergarden = {
+      dark = {
+        mPrimary = "#CBE3B3";
+        mOnPrimary = "#1E2528";
+        mSecondary = "#B3E3CA";
+        mOnSecondary = "#1E2528";
+        mTertiary = "#AFD9E6";
+        mOnTertiary = "#1E2528";
+        mError = "#F57F82";
+        mOnError = "#1E2528";
+        mSurface = "#1E2528";
+        mOnSurface = "#F8F9E8";
+        mSurfaceVariant = "#262F33";
+        mOnSurfaceVariant = "#ADC9BC";
+        mOutline = "#58686D";
+        mShadow = "#171C1F";
+        mHover = "#374145";
+        mOnHover = "#F8F9E8";
+
+        terminal = {
+          background = "#1E2528";
+          foreground = "#F8F9E8";
+          cursor = "#CBE3B3";
+          cursorText = "#1E2528";
+          selectionBg = "#4A585C";
+          selectionFg = "#F8F9E8";
+          normal = {
+            black = "#374145"; red = "#F57F82"; green = "#CBE3B3"; yellow = "#F5D098";
+            blue = "#B2CAED"; magenta = "#F3C0E5"; cyan = "#B3E3CA"; white = "#96B4AA";
+          };
+          bright = {
+            black = "#6F8788"; red = "#F57F82"; green = "#CBE3B3"; yellow = "#F5D098";
+            blue = "#B2CAED"; magenta = "#F3C0E5"; cyan = "#B3E3CA"; white = "#ADC9BC";
+          };
+        };
+      };
     };
   };
 

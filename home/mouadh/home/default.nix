@@ -16,5 +16,6 @@
     ./ghostty.nix
     ./artcraft.nix
     ./niri
+    ./hyprland.nix
   ];
 }
