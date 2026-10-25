@@ -19,5 +19,6 @@
     ./hyprland.nix
     ./cursors.nix
     ./spicetify.nix
+    ./loaf.nix
   ];
 }

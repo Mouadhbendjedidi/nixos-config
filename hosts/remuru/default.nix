@@ -8,6 +8,7 @@
     ../../modules/desktop/wallpapers-evergarden.nix
     # ../../modules/hardware/nvidia.nix
     inputs.niri.nixosModules.niri
+    ../../modules/gaming
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -54,6 +54,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    loaf-fm = {
+      url = "github:m-uvex/loaf-fm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, prism94, ... }@inputs: 

@@ -39,7 +39,10 @@ in
     hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1 })
 
     hl.config({
-        input = { kb_layout = "us" },
+        input = {
+            kb_layout = "us,ara",
+            kb_options = "grp:alt_shift_toggle",
+        },
 	env = {
             "XCURSOR_THEME,Bibata-Modern-Ice",
             "XCURSOR_SIZE,24",
@@ -82,12 +85,16 @@ in
     hl.bind("SUPER + ALT + Space", hl.dsp.window.float())
     hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
     hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+    hl.bind("SUPER + E", hl.dsp.exec_cmd("loaf"))
 
     -- Caelestia shell
     hl.bind("SUPER + SUPER_L", hl.dsp.global("caelestia:launcher"), { release = true })
     hl.bind("CTRL + ALT + Delete", hl.dsp.global("caelestia:session"))
     hl.bind("SUPER + N", hl.dsp.global("caelestia:sidebar"))
     hl.bind("SUPER + L", hl.dsp.global("caelestia:lock"))
+    hl.bind("SUPER + SHIFT + S", hl.dsp.global("caelestia:screenshotFreeze"))
+    hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.global("caelestia:screenshot"))
+    hl.bind("Print", hl.dsp.exec_cmd("caelestia screenshot"))
 
     -- Focus and move windows
     for _, dir in ipairs({ "left", "right", "up", "down" }) do
