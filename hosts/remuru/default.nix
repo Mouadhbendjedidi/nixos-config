@@ -38,6 +38,43 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
+  # services.displayManager.noctalia-greeter = {
+  #   enable = true;
+  #
+  #   settings = {
+  #     user.default = me;
+  #     keyboard.layout = "us";
+  #
+  #     appearance = {
+  #       scheme = "Synced";
+  #       theme_mode = "dark";
+  #       font_family = "IoskeleyMono Nerd Font Mono";
+  #       hide_logo = true;
+  #       scheme_selector_position = "hidden";
+  #
+  #       palette = {
+  #         primary = "#CBE3B3";
+  #         on_primary = "#1E2528";
+  #         secondary = "#B3E3CA";
+  #         on_secondary = "#1E2528";
+  #         tertiary = "#AFD9E6";
+  #         on_tertiary = "#1E2528";
+  #         error = "#F57F82";
+  #         on_error = "#1E2528";
+  #         surface = "#1E2528";
+  #         on_surface = "#F8F9E8";
+  #         surface_variant = "#262F33";
+  #         on_surface_variant = "#ADC9BC";
+  #         outline = "#58686D";
+  #         shadow = "#171C1F";
+  #         hover = "#374145";
+  #         on_hover = "#F8F9E8";
+  #       };
+  #
+  #       wallpaper.fill_color = "#1E2528";
+  #     };
+  #   };
+  # };
   services.desktopManager.gnome.enable = true;
   programs.kdeconnect = {
     enable = true;
