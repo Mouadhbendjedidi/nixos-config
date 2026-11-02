@@ -11,5 +11,6 @@
     telegram-desktop
     vesktop
     feishin
+    ticktick
   ];
 }

@@ -20,5 +20,7 @@
     ./cursors.nix
     ./spicetify.nix
     ./loaf.nix
+    ./obsidian.nix
+
   ];
 }

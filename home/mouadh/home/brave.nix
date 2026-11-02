@@ -7,6 +7,8 @@
       { id = "clngdbkpkpeebahjckkjfobafhncgmne"; }  # Stylus
       { id = "ghbmnnjooekpmoecnnnilnnbdlolhkhi"; }  # google docs offline
       { id = "jfnifeihccihocjbfcfhicmmgpjicaec"; }  # gs connect
+      { id = "diankknpkndanachmlckaikddgcehkod"; }  # ticktick
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; }  # vimium
     ];
   };
 }
