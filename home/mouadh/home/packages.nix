@@ -12,5 +12,6 @@
     vesktop
     feishin
     ticktick
+    osu-lazer-bin
   ];
 }
