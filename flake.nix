@@ -59,6 +59,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    apple-emoji = {
+      url = "github:oxcl/nix-flake-apple-emoji";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, nixos-wsl, home-manager, prism94, ... }@inputs: 

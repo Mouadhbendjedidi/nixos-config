@@ -12,6 +12,8 @@
     eza
     bat
     ripgrep
+    fuzzel
+    cliphist
   ];
 
 }

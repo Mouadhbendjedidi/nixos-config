@@ -86,6 +86,7 @@ in
     hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
     hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
     hl.bind("SUPER + E", hl.dsp.exec_cmd("loaf"))
+    hl.bind("SUPER + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout current next"))
 
     -- Caelestia shell
     hl.bind("SUPER + SUPER_L", hl.dsp.global("caelestia:launcher"), { release = true })
@@ -95,6 +96,7 @@ in
     hl.bind("SUPER + SHIFT + S", hl.dsp.global("caelestia:screenshotFreeze"))
     hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.global("caelestia:screenshot"))
     hl.bind("Print", hl.dsp.exec_cmd("caelestia screenshot"))
+    hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("pkill fuzzel || caelestia emoji -p"))
 
     -- Focus and move windows
     for _, dir in ipairs({ "left", "right", "up", "down" }) do

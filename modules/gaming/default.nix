@@ -8,6 +8,8 @@
 
   programs.gamemode.enable = true;
 
+  programs.gpu-screen-recorder.enable = true;
+
   environment.systemPackages = with pkgs; [
     heroic      # Epic/GOG and other non-Steam games
     mangohud    # FPS/perf overlay
