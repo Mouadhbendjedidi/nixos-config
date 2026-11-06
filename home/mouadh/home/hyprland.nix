@@ -72,6 +72,7 @@ in
 
     hl.on("hyprland.start", function()
         hl.exec_cmd("caelestia shell -d")
+        hl.exec_cmd("vicinae server")
     end)
 
     hl.env("CAELESTIA_WALLPAPERS_DIR", "/etc/wallpapers")
@@ -96,7 +97,8 @@ in
     hl.bind("SUPER + SHIFT + S", hl.dsp.global("caelestia:screenshotFreeze"))
     hl.bind("SUPER + SHIFT + ALT + S", hl.dsp.global("caelestia:screenshot"))
     hl.bind("Print", hl.dsp.exec_cmd("caelestia screenshot"))
-    hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("pkill fuzzel || caelestia emoji -p"))
+    hl.bind("SUPER + V", hl.dsp.exec_cmd("vicinae vicinae://launch/clipboard/history"))
+    hl.bind("SUPER + Period", hl.dsp.exec_cmd("vicinae vicinae://launch/core/search-emojis"))
 
     -- Focus and move windows
     for _, dir in ipairs({ "left", "right", "up", "down" }) do

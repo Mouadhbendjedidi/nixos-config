@@ -100,6 +100,12 @@
       };
     };
   };
-
-  programs.vicinae = { enable = true; systemd.enable = true; };
+  programs.vicinae = {
+    enable = true;
+    systemd.enable = true;
+    settings.theme = {
+      dark.name = "evergarden-winter";
+      light.name = "evergarden-winter";
+    };
+  };
 }

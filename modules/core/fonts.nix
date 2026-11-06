@@ -1,12 +1,16 @@
-{ pkgs, inputs, ... }:
+{ pkgs, myPkgs, inputs, ... }:
 {
   fonts.packages = with pkgs; [
     ioskeley-mono.nf
     noto-fonts-color-emoji
     inputs.apple-emoji.packages.${pkgs.stdenv.hostPlatform.system}.default
+    myPkgs.estedad
   ];
 
-  fonts.fontconfig.defaultFonts.emoji = [ "Apple Color Emoji" "Noto Color Emoji" ];
+  fonts.fontconfig.defaultFonts = {
+    emoji = [ "Apple Color Emoji" "Noto Color Emoji" ];
+    sansSerif = [ "Estedad" ];
+  };
 
   fonts.fontconfig.localConf = ''
     <?xml version="1.0"?>

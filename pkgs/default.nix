@@ -7,4 +7,5 @@ in
   instagram-cli = pkgs.callPackage ./instagram-cli { };
   apps2samsung = pkgs.callPackage ./apps2samsung { };
   prismlauncher = pinned.prismlauncher;
+  estedad = pkgs.callPackage ./estedad { };
 }

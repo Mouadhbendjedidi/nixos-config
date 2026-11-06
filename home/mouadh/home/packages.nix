@@ -13,5 +13,6 @@
     feishin
     ticktick
     osu-lazer-bin
+    vscode
   ];
 }
