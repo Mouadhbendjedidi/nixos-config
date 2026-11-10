@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, myPkgs, ... }:
 let
   system = pkgs.stdenv.hostPlatform.system;
 
@@ -14,6 +14,9 @@ let
 
   shell = inputs.caelestia-shell.packages.${system}.with-cli.override {
     caelestia-cli = cli;
+    makeFontsConf = args: pkgs.makeFontsConf (args // {
+      fontDirectories = args.fontDirectories ++ [ myPkgs.estedad ];
+    });
   };
 in
 {
@@ -23,6 +26,15 @@ in
     enabled = true;
     base = 0.6;    # shell background opacity
     layers = 0.2;  # extra transparency for layered UI on top
+  };
+
+    programs.caelestia.settings.appearance.font = {
+    clock = "Estedad";
+    workspaces = "Estedad";
+    headline.family = "Estedad";
+    title.family = "Estedad";
+    body.family = "Estedad";
+    label.family = "Estedad";
   };
 
   programs.caelestia = {
@@ -72,6 +84,7 @@ in
 
     hl.on("hyprland.start", function()
         hl.exec_cmd("caelestia shell -d")
+	hl.env("EMOJI_FONT", "Apple Color Emoji")
         hl.exec_cmd("vicinae server")
     end)
 
