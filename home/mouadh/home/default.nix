@@ -13,7 +13,7 @@
     ./brave.nix
     ./gnome.nix
     ./evergarden.nix
-    ./ghostty.nix
+    ./alacritty.nix
     ./artcraft.nix
     ./niri
     ./hyprland.nix

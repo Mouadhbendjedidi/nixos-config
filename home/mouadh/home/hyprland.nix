@@ -93,7 +93,7 @@ in
 
 
     -- Apps and windows
-    hl.bind("SUPER + Return", hl.dsp.exec_cmd("ghostty"))
+    hl.bind("SUPER + Return", hl.dsp.exec_cmd("alacritty"))
     hl.bind("SUPER + Q", hl.dsp.window.close())
     hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen" }))
     hl.bind("SUPER + ALT + Space", hl.dsp.window.float())

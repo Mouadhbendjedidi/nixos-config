@@ -7,7 +7,7 @@
     variant = "winter";
     accent = "green";
 
-    ghostty.enable = true;
+    alacritty.enable = true;
     spicetify.enable = true;
     tmux.enable = true;
 
