@@ -21,6 +21,6 @@
     ./spicetify.nix
     ./loaf.nix
     ./obsidian.nix
-
+    ./browser.nix
   ];
 }
